@@ -10,12 +10,21 @@ body {
 
 /* BEGIN (write your solution here) */
 p {
+	vertical-align: center;
+	horiz-align: center;
 	margin-bottom: 12px;
 }
 
+form {
+}
+
 h1,h2,h3 {
-	margin-bottom: 0px;
+	text-align: center;
+	margin-bottom: 0;
 	font-weight: 400;
+}
+
+img {
 }
 
 h1 {
@@ -24,9 +33,6 @@ h1 {
 
 h2 {
 	font-size: 32px;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-    border-bottom-color: gray;
 	margin-bottom: 8px;
 }
 
@@ -43,4 +49,27 @@ h3 {
 	margin-top: 64px;
 	text-align: center;
 }
+
+button,
+button:active,
+button:focus {
+	outline: none;
+}
+
+button {
+	margin-left: 120px; /* Костыль для центрирования картинки-кнопки */
+	padding: 0;
+	border: 0;
+}
+
+
+
+/* Переменные */
+/* use: var(--gray-color) */
+:root {
+	--main-color: #ff6f69;
+	--green-color: #1ECD97;
+	--gray-color: #bbbbbb;
+}
+
 /* END */
