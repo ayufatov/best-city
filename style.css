@@ -25,6 +25,7 @@ h1,h2,h3 {
 }
 
 img {
+	horiz-align: center;
 	vertical-align: middle;
 	max-height: 100%;
 	max-width: 100%;
@@ -53,6 +54,7 @@ h3 {
 	text-align: center;
 }
 
+/* Кнопки */
 button,
 button:active,
 button:focus {
@@ -60,11 +62,17 @@ button:focus {
 }
 
 button {
+	horiz-align: center;
+	vertical-align: middle;
 	/*margin-left: 120px; !* Костыль для центрирования картинки-кнопки *!*/
 	padding: 0;
 	border: 0;
 }
 
+/* Ссылки */
+a { text-decoration: none; color: #0f7afc; border-bottom: 1px solid; border-bottom-color: rgba(15, 122, 252, 0.2); }
+a:hover { text-decoration: none; color: #cf0000; border-bottom-color: rgba(208, 64, 0, 0.2); }
+a:visited { text-decoration: none; color: #800080; border-bottom-color: rgba(128, 0, 128, 0.2); }
 
 
 /* Переменные */
@@ -73,6 +81,10 @@ button {
 	--main-color: #ff6f69;
 	--green-color: #1ECD97;
 	--gray-color: #bbbbbb;
+}
+
+.dislike {
+	text-align: center; /* Выравнивание по центру */
 }
 
 /* END */
