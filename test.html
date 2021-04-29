@@ -1,0 +1,103 @@
+<!-- BEGIN (write your solution here) -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Лучший город на Земле</title>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="Лучший город на Земле">
+    <meta property="og:site_name" content="ayufatov best-city">
+    <meta property="og:url" content="https://github.com/ayufatov/best-city">
+    <meta property="og:description" content="This is jast joke">
+    <meta property="og:image" content="images/question.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div id="main">
+    <h2>Хочу узнать какой город самый лучший на Земле</h2>
+    <script defer language="JavaScript">
+        document.write("Вы пришли с <b>"+document.referrer+"</b>");
+        document.write("<BR>Ваш броузер: <b>"+navigator.appName+"</b>");
+        document.write("<BR>Кодовое название: <b>"+navigator.appCodeName+"</b>");
+        document.write("<BR>Версия: <b>"+ navigator.appVersion+"</b>")
+        document.write("<br>Заголовок пользовательского агента: <b>"+navigator.userAgent+"</b>");
+    </script>
+    <script language="JavaScript">
+        if (navigator.geolocation) {
+            // Геолокация доступна
+            navigator.geolocation.getCurrentPosition(
+                // Функция обратного вызова при успешном извлечении локации
+                function(position) {
+                    // document.forms.my.reset(); // сбрасываем форму
+                    // location.reload(); // перезагружаем страницу
+                    console.log('latitude', position.coords.latitude);
+                    console.log('longitude', position.coords.longitude);
+                    document.write("<br>Локация пользователя: <b>"+position.coords.latitude+"</b>");
+                    document.write("<br>Локация пользователя: <b>"+position.coords.longitude+"</b>");
+                    /*
+                    В объекте position изложена подробная информация
+                    о позиции устройства:
+                    position = {
+                        coords: {
+                            latitude - Широта.
+                            longitude - Долгота.
+                            altitude - Высота в метрах над уровнем моря.
+                            accuracy - Погрешность в метрах.
+                            altitudeAccuracy - Погрешность высоты над уровнем моря в метрах.
+                            heading - Направление устройства по отношению к северу.
+                            speed - Скорость в метрах в секунду.
+                        }
+                        timestamp - Время извлечения информации.
+                    }
+                    */
+                },
+                // Функция обратного вызова при неуспешном извлечении локации
+                function(error){
+                    console.log('code', error.code);
+                    console.log('message', error.message);
+                    document.write("<br>Локация пользователя: <b>"+error.code+"</b>");
+                    document.write("<br>Локация пользователя: <b>"+error.message+"</b>");
+                    /*
+                    При неудаче, будет доступен объект error:
+                    error = {
+                        code - Тип ошибки
+                                1 - PERMISSION_DENIED
+                                2 - POSITION_UNAVAILABLE
+                                3 - TIMEOUT
+                        message - Детальная информация.
+                    }
+                    */
+                }
+            );
+            //document.write("<br>Локация пользователя: <b>"+navigator.geolocation.getCurrentPosition()+"</b>");
+        }
+    </script>
+    <p style="text-align: center">
+        <!--			<form action="sochi.html" target="_blank">-->
+    <form onclick="goTo()" target="_blank">
+        <button><img src="images/button.jpeg" alt="Кнопочка"></button></form></p>
+    <p><A href="ip.php">Можно еще попробовать определить ваш IP адрес и имя.</A><BR></p>
+
+    <script language="JavaScript">
+        var goTo = function() {
+            const cityBryansk = 'bryansk.html';
+            const citySochi = 'sochi.html';
+            //var myArray = ['January', 'February', 'March'];
+
+
+            const cities = [cityBryansk, citySochi];
+
+            const bestCity = Math.floor(Math.random() * cities.length);
+            console.log(bestCity, cities[bestCity]);
+
+            //bestCity = Math.random()
+            // window.location.href = cityBryansk;
+            window.open(cities[bestCity]);
+        }
+    </script>
+    <a href="#" onClick="goTo()">Лучший город</a>
+</div>
+</body>
+</html>
+<!-- END -->
