@@ -1,0 +1,65 @@
+<!-- BEGIN (write your solution here) -->
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Выбор города</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+        <link rel="stylesheet" type="text/css" href="css/cs-skin-elastic.css" />
+    </head>
+    <body>
+        <div id="main">
+<!--            Переход по ссылке из выпадающего списка-->
+<!--            <form name="menu">-->
+<!--                <select name="sel" onChange="linklist(document.menu.sel)">-->
+<!--                    <option value="#">Выберите раздел для перехода</option>-->
+<!--                    <option title="Переход на главную страницу (откроется в новом окне)" value="http://www.redsimple.ru/" target="new">Главная страница</option>-->
+<!--                    <option title="Переход к портфолио по сайтам" value="http://www.redsimple.ru/sites/">Сайты</option>-->
+<!--                    <option title="Переход к странице с изображениями" value="http://www.redsimple.ru/foto/">Фото</option>-->
+<!--                    <option title="Переход к архиву ссылок" value="http://www.redsimple.ru/links/">Линки</option>-->
+<!--                </select>-->
+<!--            </form>-->
+
+
+            <form name="cityForm" action="http://localhost:8080/userCity" method="post" enctype="application/x-www-form-urlencoded">
+            <section name="citySection">
+            <select name="citySelect" class="cs-select cs-skin-elastic">
+                <option value="" disabled selected>Выберите город</option>
+                <option data-window="new" value="Брянск" data-link="bryansk.html" data-class="bryansk-gerb">Брянск</option>
+                <option data-window="new" value="Москва" data-link="bryansk.html" data-class="moscow-gerb">Москва</option>
+                <option data-window="new" value="Сочи" data-link="sochi.html" data-class="sochi-gerb">Сочи</option>
+                <option data-window="new" value="Новороссийск" data-link="bryansk.html" data-class="novorosiysk-gerb">Новороссийск</option>
+            </select>
+            </section>
+<!--                переход на "http://localhost:8080/userCity" -->
+<!--                <p><input type="submit" value="Перейти"></p>-->
+            </form>
+        </div>
+        <script src="js/classie.js"></script>
+        <script src="js/selectFx.js"></script>
+        <script>
+            (function() {
+                [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+                    new SelectFx(el);
+                } );
+            })();
+        </script>
+
+<!--        Скрипт для перехода по ссылкам из списка -->
+<!--        <script language="JavaScript" type="text/javascript">-->
+<!--            function linklist(what){-->
+<!--                console.log(what);-->
+<!--                var selectedopt=what.options[what.selectedIndex]-->
+<!--                if (document.getElementById && selectedopt.getAttribute("target")=="new")-->
+<!--                    window.open(selectedopt.value)-->
+<!--                else-->
+<!--                    window.location=selectedopt.value-->
+<!--            }-->
+<!--        </script>-->
+    </body>
+</html>
+<!-- END -->

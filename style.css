@@ -16,6 +16,10 @@ p {
 }
 
 form {
+	horiz-align: center;
+	vertical-align: middle;
+	max-height: 100%;
+	max-width: 100%;
 }
 
 h1,h2,h3 {
@@ -67,6 +71,9 @@ button {
 	/*margin-left: 120px; !* Костыль для центрирования картинки-кнопки *!*/
 	padding: 0;
 	border: 0;
+}
+
+section {
 }
 
 /* Ссылки */
